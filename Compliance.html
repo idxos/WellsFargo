@@ -1,0 +1,95 @@
+﻿<section id="content" class="container-fluid ">
+    <div class="row">
+        <div class="side-bar">
+            <div>
+                <h1 id="side-bar-header">Alerts</h1>
+            </div>
+
+            <!--<div id="side-bar-grid">
+                <div kendo-grid="alertsGrid" class="communications" k-options="kendoAlertGridOptions" k-rebind="kendoAlertGridOptions" k-ng-delay="kendoAlertGridOptions"></div>
+            </div>-->
+            <div class=side-bar-top-list">
+                <ul>
+                    <li class="side-bar-item"><a href="#">5/23 @ 4:24 pm - ZL Dead Message Queue Some extra spacing</a></li>
+                    <li class="side-bar-item"><a href="#">5/23 @ 4:24 pm - ZL Unknown User Department Some extra spacing</a></li>
+                    <li class="side-bar-item"><a href="#">5/23 @ 4:24 pm - ZL 5000 Status</a></li>
+                    <li class="side-bar-item"><a href="#">5/23 @ 4:24 pm - Volume Variance</a></li>
+                    <li class="side-bar-item"><a href="#">5/23 @ 4:24 pm - Message Timeliness</a></li>
+                    <li class="side-bar-item"><a href="#">5/23 @ 4:24 pm - Missing Message</a></li>
+                </ul>
+            </div>
+            <hr id="side-bar-divider"/>
+            <div>
+                <h1 id="side-bar-header">Reports</h1>
+            </div>
+            <div>
+                <ul>
+                    <li class="side-bar-item"><a href="#">Report 1</a></li>
+                    <li class="side-bar-item"><a href="#">Report 2</a></li>
+                    <li class="side-bar-item"><a href="#">Report 3</a></li>
+                    <li class="side-bar-item"><a href="#">Report 4</a></li>
+                    <li class="side-bar-item"><a href="#">Report 5</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <input type="checkbox" id="side-bar-trigger" class="side-bar-trigger"/>
+        <label for="side-bar-trigger"></label>
+
+        <div class="site-wrap">
+            <!--<div kendo-tab-strip k-options="kendoTabStripOptions" k-content-urls="[null, null ]">
+                <ul>
+                    <li class="k-state-active">Archived Comms</li>
+                    <li>Bloomberg Messages</li>
+                    <li>Bloomberg Chat</li>
+                    <li>Exchange</li>
+                </ul>
+                <div style="padding: 1em">
+                    <div kendo-chart="kendoArchivedCommsChart" k-rebind="kendoArchivedCommsOptions" k-options="kendoArchivedCommsOptions"></div>
+                </div>
+
+                <div style="padding: 1em">
+                    <div kendo-chart="kendoBloombergMessageChart" k-rebind="kendoBloombergMessageOptions" k-options="kendoBloombergMessageOptions"></div>
+                </div>
+                <div style="padding: 1em">
+                    <div kendo-chart="kendoBloombergChatChart" k-rebind="kendoBloombergChatOptions" k-options="kendoBloombergChatOptions"></div>
+                </div>
+                <div style="padding: 1em">
+                    <div kendo-chart="kendoExchangeChart" k-rebind="kendoExchangeOptions" k-options="kendoExchangeOptions"></div>
+                </div>
+            </div>-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div kendo-chart="kendoArchivedCommsChart" k-rebind="kendoArchivedCommsOptions" k-options="kendoArchivedCommsOptions"></div>
+                </div>
+            </div>
+            <div style="margin: 1em"></div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div kendo-chart="kendoBloombergMessageChart" k-rebind="kendoBloombergMessageOptions" k-options="kendoBloombergMessageOptions"></div>
+                </div>
+                <div class="col-lg-4">
+                    <div kendo-chart="kendoBloombergChatChart" k-rebind="kendoBloombergChatOptions" k-options="kendoBloombergChatOptions"></div>
+                </div>
+                <div class="col-lg-4">
+                    <div kendo-chart="kendoExchangeChart" k-rebind="kendoExchangeOptions" k-options="kendoExchangeOptions"></div>
+                </div>
+            </div>
+            <div style="margin: 1em"></div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div kendo-chart="kendoLyncImageReconChart" k-rebind="kendoLyncImageReconOptions" k-options="kendoLyncImageReconOptions"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div kendo-chart="kendoLyncVantageChart" k-rebind="kendoLyncVantageOptions" k-options="kendoLyncVantageOptions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(window).resize(function () {
+        kendo.resize($("div.k-chart[data-role='chart']"));
+    });
+</script>

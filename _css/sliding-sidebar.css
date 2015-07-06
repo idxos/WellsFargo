@@ -1,0 +1,130 @@
+﻿/* side-bar Menu - Background */
+.side-bar {
+  /* critical sizing and position styles */
+  width: 380px;
+  height: 73%;
+  position: fixed; 
+  top: 170px;
+  right: 35px;
+  z-index: 0;
+
+  /* non-critical appearance styles */
+  list-style: none;
+  background: black;
+}
+
+/* Side-bar Menu - List items */
+.side-bar-item {
+  /* critical position styles for right alignment */
+  display: inline-block;
+  float: right;
+  clear: both;
+
+  /* non-critical appearance styles */
+  width: 370px;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #000;
+  background-color: gray;
+}
+
+.side-bar-item a {
+  /* non-critical appearance styles */
+  display: block;
+  padding: .5em;
+  background: -webkit-linear-gradient(315deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  color: white;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: color 0.2s, background 0.5s;
+}
+
+.side-bar-item a:hover {
+    /* non-critical appearance styles */
+    color: #c74438;
+    background: -webkit-linear-gradient(315deg, rgba(0,0,0,0) 0%, rgba(75,20,20,0.65) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+}
+
+/* Site Wrapper - Everything that isn't side-bar */
+.site-wrap {
+  /* Critical position and size styles */
+  min-height: 100%;
+  min-width: 100%;
+  background-color: white;  /*Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  
+  /* non-critical apperance styles */
+  padding: 4em;
+  background-size: 200%;
+}
+
+/* Side-bar Trigger */
+.side-bar-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="side-bar-trigger"] {
+  /* critical positioning styles */
+  position: fixed;
+  right: 40px; 
+  top: 180px; 
+  z-index: 2;
+  
+  /* non-critical apperance styles */
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+  background-size: contain;
+}
+
+/* Make the Magic Happen */
+.side-bar-trigger + label, .site-wrap {
+  transition: right /* critical for right alignment */ 0.2s;
+}
+
+.side-bar-trigger:checked + label {
+  /* critical position styles for right alignment */
+  right: 430px;
+}
+
+.side-bar-trigger:checked ~ .site-wrap {
+  left: -390px; /* critical position styles for right alignment, use +200 for left alignment */
+  /*box-shadow: 5px 5px 5px rgba(0,0,0,0.5);*/
+}
+
+body {
+	/* Without this, the body has excess horizontal scroll when the menu is open */
+  overflow-x: hidden;
+}
+
+#side-bar-header {
+    float: right;
+    clear: both;
+    color: #a5293b;
+    margin-right: 150px;
+}
+
+#side-bar-grid {
+    margin-top: 70px;
+}
+
+#side-bar-divider {
+    float: right;
+    clear: both;
+    color: white;
+    width: 380px;
+}
+
+.side-bar-top-list {
+    height: 50px;
+    /*overflow-y: hidden;*/
+}
+
