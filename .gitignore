@@ -16,3 +16,4 @@ nginx-ssl.access.log
 nginx-ssl.error.log
 php-errors.log
 /kendo
+/bower
